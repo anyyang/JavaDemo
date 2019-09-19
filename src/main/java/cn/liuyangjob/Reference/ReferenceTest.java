@@ -83,36 +83,4 @@ class VeryBigWeakReference extends WeakReference<VeryBig> {
         System.out.println("Finalizing VeryBigWeakReference " + id);
     }
 
-
-    public void main(String args[]) throws InterruptedException {
-        /**
-         * 强引用（Strong Reference）：通常我们通过new来创建一个新对象时返回的引用就是一个强引用，
-         * 若一个对象通过一系列强引用可到达，
-         * 它就是强可达的(strongly reachable)，
-         * 那么它就不被回收
-         */
-        String str = new String("abc");
-        /** 软引用和弱引用的区别在于，若一个对象是弱引用可达，
-         * 无论当前内存是否充足它都会被回收，
-         * 而软引用可达的对象在<b>内存不充足时才会被回收<b/>，
-         * 因此软引用要比弱引用“强”一些
-         **/
-        SoftReference<String> softRef = new SoftReference<String>(str);
-        /*
-         * 虚引用是Java中最弱的引用，那么它弱到什么程度呢？
-         * <b>它是如此脆弱以至于我们通过虚引用甚至无法获取到被引用的对象，</b>
-         * 虚引用存在的唯一作用就是当它指向的对象被回收后，虚引用本身会被加入到引用队列中，
-         * 用作记录它指向的对象已被销毁。
-         */
-        String weak = "aaaa";
-        WeakReference<String> weakReference = new WeakReference<>(weak);
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put(weak, new Integer(1));
-        int count = 100;
-        while (count > 0) {
-            count--;
-            System.out.println(count + "weak" + weakReference.hashCode());
-            Thread.sleep(1000);
-        }
-    }
 }
