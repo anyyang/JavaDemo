@@ -45,21 +45,30 @@ class MyThread extends Thread {
 
 
 class SemaphoreService {
-    private Semaphore semaphore = new Semaphore(2);// 同步关键类，构造方法传入的数字是多少，则同一个时刻，只运行多少个进程同时运行制定代码
-
+    // 同步关键类，构造方法传入的数字是多少，则同一个时刻，
+    // 只运行多少个进程同时运行制定代码
+    // 可以理解为通道数
+    private Semaphore semaphore = new Semaphore(6);
     public void doSomething() {
         try {
             /**
-             * 在 semaphore.acquire() 和 semaphore.release()之间的代码，同一时刻只允许制定个数的线程进入，
-             * 因为semaphore的构造方法是1，则同一时刻只允许一个线程进入，其他线程只能等待。
+             * 在 semaphore.acquire() 和 semaphore.release()之间的代码，
+             * 同一时刻只允许制定个数的线程进入，因为semaphore的构造方法是1，
+             * 则同一时刻只允许一个线程进入，其他线程只能等待。
+             *
              * */
-            semaphore.acquire();
-            System.out.println(Thread.currentThread().getName() + ":doSomething start-" + System.currentTimeMillis());
-            Thread.sleep(2000);
+            semaphore.acquire(1);
+            System.out.println(Thread.currentThread().getName() + ":doSomething start-" + System.currentTimeMillis()+"  通道数目availablePermits："+availablePermits());
+            Thread.sleep(4000);
             System.out.println(Thread.currentThread().getName() + ":doSomething end-" + System.currentTimeMillis());
-            semaphore.release();
+
+            semaphore.release(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+    }
+    public int availablePermits() {    // 查看可用通路数
+        return semaphore.availablePermits();
     }
 }
