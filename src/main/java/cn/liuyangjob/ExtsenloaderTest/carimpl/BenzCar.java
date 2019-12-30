@@ -10,7 +10,7 @@ import com.alibaba.dubbo.common.extension.Adaptive;
  * cn.liuyangjob.ExtsenloaderTest.carimpl
  * All Right Reserved by liuyang.
  **/
-@Adaptive
+
 public class BenzCar extends AbstarctCar implements Car {
     @Override
     public void run(URL url) {
