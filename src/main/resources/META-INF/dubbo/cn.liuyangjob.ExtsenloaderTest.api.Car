@@ -1,0 +1,3 @@
+benz=cn.liuyangjob.ExtsenloaderTest.carimpl.BenzCar
+toyota=cn.liuyangjob.ExtsenloaderTest.carimpl.ToyotaCar
+honda=cn.liuyangjob.ExtsenloaderTest.carimpl.HondaCar
