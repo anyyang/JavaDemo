@@ -20,7 +20,7 @@ public interface Car {
      * @Adaptive注解中的值这里我叫它value，value可以是一个数组， 如果为空的话，vlaue等于接口名小写(例如接口名:cn.liuyangjob.ExtsenloaderTest.api.Car,
      * 那么value=car)
      */
-    @Adaptive
+    @Adaptive({"car"})
     void run(URL url);
 
     void didi();

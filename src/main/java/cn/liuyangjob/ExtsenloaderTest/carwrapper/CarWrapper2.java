@@ -11,20 +11,20 @@ import com.alibaba.dubbo.common.URL;
  * All Right Reserved by liuyang.
  **/
 
-public class CarWrapper extends AbstarctCar implements Car {
+public class CarWrapper2 extends AbstarctCar implements Car {
     /*public void setImpl(Car impl) {
         this.impl = impl;
     }*/
     Car impl;
 
-    public CarWrapper(Car car) {
+    public CarWrapper2(Car car) {
         impl = car;
     }
 
     @Override
     public void run(URL url) {
-        System.out.println("wrapper start car ...");
+        System.out.println("wrapper2 start car ...");
         impl.run(url);
-        System.out.println("wrapper stop car ...");
+        System.out.println("wrapper2 stop car ...");
     }
 }

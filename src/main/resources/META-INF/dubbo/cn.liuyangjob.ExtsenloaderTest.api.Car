@@ -1,3 +1,5 @@
+wrapper=cn.liuyangjob.ExtsenloaderTest.carwrapper.CarWrapper
+wrapper2=cn.liuyangjob.ExtsenloaderTest.carwrapper.CarWrapper2
 benz=cn.liuyangjob.ExtsenloaderTest.carimpl.BenzCar
 toyota=cn.liuyangjob.ExtsenloaderTest.carimpl.ToyotaCar
 honda=cn.liuyangjob.ExtsenloaderTest.carimpl.HondaCar
