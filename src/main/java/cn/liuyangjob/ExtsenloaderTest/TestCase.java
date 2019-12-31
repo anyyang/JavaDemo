@@ -41,7 +41,7 @@ public class TestCase {
         ExtensionLoader<Car> mycarFactory = ExtensionLoader.getExtensionLoader(Car.class);
         Car mycar = mycarFactory.getAdaptiveExtension();
         URL url=  URL.valueOf("Driver://liuyang");
-        url =  url.addParameter("car","benz");
+      //  url =  url.addParameter("car","honda");
         mycar.run(url);
     }
     public static void test1() {

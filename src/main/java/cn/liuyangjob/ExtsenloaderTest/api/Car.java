@@ -10,7 +10,7 @@ import com.alibaba.dubbo.common.extension.SPI;
  * cn.liuyangjob.ExtsenloaderTest.api
  * All Right Reserved by liuyang.
  **/
-@SPI
+@SPI("benz")
 public interface Car {
     /**
      * 至少有一个方法被@Adaptive修饰
