@@ -1,8 +1,8 @@
 package cn.liuyangjob.ExtsenloaderTest;
 
 import cn.liuyangjob.ExtsenloaderTest.api.Car;
-import com.alibaba.dubbo.common.URL;
-import com.alibaba.dubbo.common.extension.ExtensionLoader;
+//import com.alibaba.dubbo.common.URL;
+//import com.alibaba.dubbo.common.extension.ExtensionLoader;
 
 import java.util.ServiceLoader;
 
@@ -16,7 +16,7 @@ import java.util.ServiceLoader;
 public class TestCase {
     public static void main(String[] args) {
       //  JDKLoader();
-        SPILoader();
+    //    SPILoader();
     }
 
     /**
@@ -36,7 +36,7 @@ public class TestCase {
     /**
      * SPIloader 从META-INF/dubbo/cn.liuyangjob.ExtsenloaderTest.api.Car 中取值
      */
-    public static void SPILoader() {
+  /**  public static void SPILoader() {
         // 默认 @SPI("honda") 为默认自动加载的自适应拓展
         ExtensionLoader<Car> mycarFactory = ExtensionLoader.getExtensionLoader(Car.class);
         Car mycar = mycarFactory.getAdaptiveExtension();
@@ -50,5 +50,5 @@ public class TestCase {
         Car mycar = mycarFactory.getAdaptiveExtension();
         mycar.run(null);
     }
-
+**/
 }
